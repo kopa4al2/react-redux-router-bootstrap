@@ -81,8 +81,8 @@ function registerValidSW(swUrl, config) {
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              // "LandingPageLayout is cached for offline use." message.
+              console.log('LandingPageLayout is cached for offline use.');
 
               // Execute callback
               if (config && config.onSuccess) {
@@ -123,19 +123,15 @@ function checkValidServiceWorker(swUrl, config) {
     })
     .catch(() => {
       console.log(
-        'No internet connection found. App is running in offline mode.'
+        'No internet connection found. InitializationLayer is running in offline mode.'
       );
     });
 }
 
 export function unregister() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready
-      .then(registration => {
-        registration.unregister();
-      })
-      .catch(error => {
-        console.error(error.message);
-      });
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
   }
 }
